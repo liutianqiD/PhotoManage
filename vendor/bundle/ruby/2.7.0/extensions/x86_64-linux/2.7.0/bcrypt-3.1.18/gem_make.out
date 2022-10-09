@@ -1,0 +1,25 @@
+current directory: /home/scheduling/PhotoManage/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.18/ext/mri
+/home/scheduling/.rbenv/versions/2.7.2/bin/ruby -I /home/scheduling/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20221009-10060-p36lwr.rb extconf.rb
+creating Makefile
+
+current directory: /home/scheduling/PhotoManage/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.18/ext/mri
+make "DESTDIR=" clean
+
+current directory: /home/scheduling/PhotoManage/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.18/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+compiling crypt_blowfish.c
+gcc  -D__SKIP_GNU -I/home/scheduling/.rbenv/versions/2.7.2/include     -c -o x86.o x86.S
+compiling crypt_gensalt.c
+compiling wrapper.c
+wrapper.c:182:60: 警告: ‘struct crypt_data’ declared inside parameter list will not be visible outside of this definition or declaration
+ char *crypt_r(const char *key, const char *setting, struct crypt_data *data)
+                                                            ^~~~~~~~~~
+cc1: 警告: 認識できないコマンドラインオプション ‘-Wno-self-assign’ です
+cc1: 警告: 認識できないコマンドラインオプション ‘-Wno-parentheses-equality’ です
+cc1: 警告: 認識できないコマンドラインオプション ‘-Wno-constant-logical-operand’ です
+linking shared-object bcrypt_ext.so
+
+current directory: /home/scheduling/PhotoManage/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.18/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20221009-10060-q9x9bf

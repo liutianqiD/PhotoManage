@@ -1,0 +1,16 @@
+<h1>ログイン</h1>
+
+<% flash.each do |message_type, message| %>
+<div class="alert alert-<%= message_type %>">
+  <% message2 = message.gsub(",","<br>") %>
+  <%= message2.html_safe %>
+</div>
+<% end %>
+<%= form_for(:session, url: login_path) do |f| %>
+
+<%= f.label :'ユーザーID' %>
+<%= f.text_field :email %>
+<%= f.label :'パスワード' %>
+<%= f.password_field :password %>
+<%= f.submit "ログインする" %>
+<% end %>
