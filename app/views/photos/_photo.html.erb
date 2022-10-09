@@ -1,0 +1,9 @@
+<div id="<%= dom_id photo %>">
+  <p>
+    <%= photo.title %>
+  </p>
+  <% if photo.image.attached? %>
+  <%= image_tag photo.image %>
+  <% end %>
+
+</div>
