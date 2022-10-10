@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
 
   # GET /photos or /photos.json
   def index
-    @photos = Photo.all.order(create_at: "DESC")
+    @photos = Photo.all.order(created_at: "DESC")
   end
 
   # GET /photos/1 or /photos/1.json
