@@ -1,9 +1,9 @@
 # README
-* 開発動作確認環境
+* ローカル動作確認環境
   * Ruby version: 2.7.2
   * CentOS Linux release 8.1.1911 (Core)
 
-* ローカル環境動く手順
+* ローカル動く手順
   * $ bundle install
   * $ bundle exec rails db:migrate
   * ログインユーザ手動登録
