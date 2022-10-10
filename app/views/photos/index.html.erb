@@ -1,6 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>写真一覧</h1>
+<%= link_to "MyTweetAppと連携", @authorize_endpoint%> <br>
 <%= link_to "写真を新規アップロード", new_photo_path, method: "get" %>
 <div id="wrapper">
   <ul id="gallery">

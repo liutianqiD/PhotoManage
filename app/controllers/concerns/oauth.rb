@@ -2,7 +2,11 @@ module Oauth
   extend ActiveSupport::Concern
 
   def authorize_endpoint
-    oauth_base_url + "authorize?" + "client_id=" + client_id + "response_type=code" + "redirect_uri=" + redirect_uri + "scope=" + "state="
+    oauth_base_url + "/authorize?" + "client_id=" + client_id + "&response_type=code" + "&redirect_uri=" + redirect_uri + "&scope=" + "&state="
+  end
+
+  def token_endpoint(code)
+    oauth_base_url + "/token"
   end
 
   def oauth_base_url
@@ -16,7 +20,7 @@ module Oauth
   def client_id
     "7c65b07b948aa48042d9d09800f7f019b13d5ff03ece3cdeee4832ab995e7db2"
   end
-  def client_create
+  def client_secret
     "50b1caa4a949713166483b0a175cff6ec608831e36f5e2e4b024fe8e67fe415f"
   end
 end

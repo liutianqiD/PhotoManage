@@ -1,9 +1,12 @@
 class PhotosController < ApplicationController
+  include Oauth
+
   before_action :require_login
   before_action :set_photo, only: %i[ show edit update destroy ]
 
   # GET /photos or /photos.json
   def index
+    @authorize_endpoint = authorize_endpoint
     @photos = Photo.all.order(created_at: "DESC")
   end
 
@@ -13,10 +16,6 @@ class PhotosController < ApplicationController
 
   # GET /photos/new
   def new
-    # require 'oauth'
-    # binding.pry
-    # test = Oauth.new
-    # test.authorize_endpoint
     @photo = Photo.new
   end
 
