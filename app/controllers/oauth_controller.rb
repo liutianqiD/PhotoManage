@@ -1,4 +1,5 @@
 class OauthController < ApplicationController
+  before_action :require_login
   include Oauth
   require 'net/http'
   require 'uri'
