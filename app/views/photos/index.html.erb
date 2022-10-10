@@ -1,9 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>写真一覧</h1>
-<%= link_to "写真アップロード", new_photo_path, method: "get" %>
-<div id="photos">
-  <% @photos.each do |photo| %>
-  <%= render photo %>
-  <% end %>
+<%= link_to "写真を新規アップロード", new_photo_path, method: "get" %>
+<div id="wrapper">
+  <ul id="gallery">
+    <% @photos.each do |photo| %>
+    <%= render photo %>
+    <% end %>
+  </ul>
 </div>

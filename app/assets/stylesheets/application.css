@@ -18,3 +18,31 @@
 .alert-danger {
   color: red;
 }
+
+#wrapper {
+  height: 100%;
+}
+
+/* ギャラリー設定 */
+#gallery {
+  list-style: none;
+  /*箇条書きの・を削除*/
+  overflow: hidden;
+  padding-left: 0;
+}
+
+#gallery li {
+  float: left;
+  width: calc(100%/3);
+  /*リスト幅をビューポートの1/3で設定*/
+  line-height: 0;
+  /*行間をなくす⇒上下を詰める*/
+}
+
+#gallery img {
+  display: block;
+  /*imgタグの初期値はinline⇒blockで幅指定を出来るように*/
+  width: 100%;
+  /*親要素liの幅：calc(100%/3)に合わせる*/
+  height: auto;
+}

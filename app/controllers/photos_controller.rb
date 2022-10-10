@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
 
   # GET /photos or /photos.json
   def index
-    @photos = Photo.all
+    @photos = Photo.all.order(create_at: "DESC")
   end
 
   # GET /photos/1 or /photos/1.json
@@ -13,6 +13,10 @@ class PhotosController < ApplicationController
 
   # GET /photos/new
   def new
+    # require 'oauth'
+    # binding.pry
+    # test = Oauth.new
+    # test.authorize_endpoint
     @photo = Photo.new
   end
 
@@ -23,7 +27,6 @@ class PhotosController < ApplicationController
   # POST /photos or /photos.json
   def create
     @photo = Photo.new(photo_params)
-
     if @photo.save
       redirect_to photos_url
     else

@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      # view側： User.model_name.human => "ユーザ" / t("activerecord.models.user")と同じ
+      photo: 写真
+    # model毎に定義したいattributesを記述
+    attributes:
+        photo:
+          title: タイトル
+          image: 画像
