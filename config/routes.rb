@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   get 'oauth/callback'
-  resources :photos
+  resources :photos do
+    collection do
+      get :twitter
+    end
+  end
   root 'photos#index'
 
   get    '/login',   to: 'sessions#new'

@@ -5,5 +5,7 @@
   <% if photo.image.attached? %>
   <%= image_tag photo.image, size: '320x240' %>
   <% end %>
-
+  <p>
+    <%= link_to "ツイートする", twitter_photos_path(id: photo.id), {method: :get }%>
+  </p>
 </li>

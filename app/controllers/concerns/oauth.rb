@@ -9,6 +9,10 @@ module Oauth
     oauth_base_url + "/token"
   end
 
+  def twitter_endpoint
+    "https://arcane-ravine-29792.herokuapp.com/api/tweets"
+  end
+
   def oauth_base_url
     "https://arcane-ravine-29792.herokuapp.com/oauth"
   end

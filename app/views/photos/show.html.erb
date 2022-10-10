@@ -1,0 +1,7 @@
+<p>
+  <%= @photo.title %>
+</p>
+<% if @photo.image.attached? %>
+<%= image_tag @photo.image, size: '320x240' %>
+<% end %>
+<p>

@@ -2,7 +2,7 @@ class PhotosController < ApplicationController
   include Oauth
 
   before_action :require_login
-  before_action :set_photo, only: %i[ show edit update destroy ]
+  before_action :set_photo, only: %i[ show edit update destroy twitter]
 
   # GET /photos or /photos.json
   def index
@@ -23,6 +23,26 @@ class PhotosController < ApplicationController
   def edit
   end
 
+  def twitter
+    require 'net/http'
+    require 'uri'
+    require 'json'
+    uri = URI.parse(twitter_endpoint)
+    req = Net::HTTP::Post.new(uri)
+    req["Authorization"] = "Bearer " + session[:access_token]
+    req["Content-Type"] = "application/json"
+    photo_url = 'http://localhost:3000/photos/' + @photo.id.to_s
+    post_data = {'text' => @photo.title, 'url' => photo_url}.to_json
+    req.body = post_data
+    req_options = {
+     use_ssl: uri.scheme == "https"
+    }
+    response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+      http.request(req)
+    end
+    redirect_to photos_url
+  end
+
   # POST /photos or /photos.json
   def create
     @photo = Photo.new(photo_params)
@@ -32,9 +52,7 @@ class PhotosController < ApplicationController
       flash[:danger] = @photo.errors.full_messages.join(',')
       redirect_to action: :new
     end
-
   end
-
 
   # DELETE /photos/1 or /photos/1.json
   def destroy
