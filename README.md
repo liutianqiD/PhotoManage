@@ -1,24 +1,13 @@
 # README
+* 開発動作確認環境
+  * Ruby version: 2.7.2
+  * CentOS Linux release 8.1.1911 (Core)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* ローカル環境動く手順
+  * $ bundle install
+  * $ bundle exec rails db:migrate
+  * ログインユーザ手動登録
+    $ bundle exec rails c
+      User.create(email: "hogehoge@example.com", password: "hogehoge", password_confirmation: "hogehoge")
+  * 起動
+    $ bundle exec rails s
